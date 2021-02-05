@@ -1,0 +1,46 @@
+---
+- name: Install ReplayD on CentOS machine
+  hosts: REPLAYD_SERVER
+  gather_facts: no
+
+  vars:
+    daemon_service_path: /usr/local/bin
+
+  tasks:
+    - debug: var=REPLAYD_SERVER
+
+    - name: Ensure group "replayd" exists
+      ansible.builtin.group:
+        name: replayd
+        state: present
+      become: true
+
+    - name: Create replayd user
+      user:
+        name: replayd
+        groups: 
+          - replayd
+        state: present
+        shell: /sbin/nologin       
+        #create_home: no 
+      become: true
+
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: ./replayd.py
+        dest: /usr/local/bin/replayd.py
+        owner: replayd
+        group: replayd
+        mode: '0644'
+      become: true
+
+    - name: Copy replayd service file
+      template: src=replayd.service.j2 dest=/etc/systemd/system/replayd.service
+      become: true
+
+    - name: Start replayd service
+      ansible.builtin.systemd:
+        state: restarted
+        daemon_reload: yes
+        name: replayd
+      become: true

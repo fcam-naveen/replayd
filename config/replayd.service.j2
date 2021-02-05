@@ -1,0 +1,12 @@
+[Unit]
+Description=Replayd service returns data as user sent
+After=network.target
+
+[Service]
+User=replayd
+Group=replayd
+WorkingDirectory=/home/replayd
+ExecStart=/usr/bin/python3 {{daemon_service_path}}/replayd.py
+
+[Install]
+WantedBy=multi-user.target
