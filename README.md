@@ -41,8 +41,8 @@ You can see the help using
 ./run_all.sh  
 ```run_all.sh <all | build | run | test> ```.  
 ```all``` will do all steps. build,run,test.  
-```build``` will build docker image.  
-```run``` will create a docker container and configures replayd server on port 6080.  
+```build``` will rebuild docker image.  
+```run``` will recreate a docker container and configures replayd server on port 6080.  
 ```test``` will perform post and get to make sure what we get is what we set.  
 
 ### Debugging

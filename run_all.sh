@@ -25,6 +25,9 @@ function build_replayd {
 }
 
 function run_config_replayd {
+    echo -e "$ORANGE Cleaning up if required... $END"
+    # stop if we already have server running
+    docker stop $REPLAYD_SERVER
     echo -e "$ORANGE====================================== $END"
     echo -e "$BLUE     Creating the container... $END"
     echo -e "$ORANGE====================================== $END"
