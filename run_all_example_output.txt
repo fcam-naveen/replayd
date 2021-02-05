@@ -1,0 +1,422 @@
+[1;38m Cleaning up if required... [0m
+replayd_server
+Untagged: c7-systemd-sshd:latest
+Deleted: sha256:140eedb843818bbbb9717d77b33728c0c109f64af321ef81607e459780906eb2
+Deleted: sha256:fb5e8b28de1ee7ea294458978c7ead8ac448d8c523ae6cfa7f2d12ce899c5932
+Deleted: sha256:74da69972b4f308a6d0b4354378b305b72e0cd4aa71791be3a6bab4173f064f5
+Deleted: sha256:b7579ace450722652248e6e68aad36f99ac584552dbf93434ba0664934186139
+Deleted: sha256:50e1b36ceb0644f621eeb14de6661be2ec871aa92d98af51afc8e3c14796ef13
+Deleted: sha256:b9f5b69b1b8306db655b7b2340b9ac67ddbc3f66bea07a5747ba9f520486b852
+Deleted: sha256:22756aa6309a4b74083eddc42c01b7cb853a67d319cce79708af38ec8d480883
+Deleted: sha256:28e7ea8f6677a91b0ae449a9537357bff3c4159250f140df0f5d33c4092dc816
+Deleted: sha256:678a94f354af46149ffb0dc269ecc874ab475db0a42d166f5050d60652b54dbb
+Deleted: sha256:8b409729b3942611d710b999574e402c88f17f45e3f2963fc1ded737d86762c5
+Deleted: sha256:951521d80a878e21714bac7fbdf87bcb5e7e0c96302497c3b9daf36081ec9648
+Deleted: sha256:d71d7d09597695d98902671f9a43d5fde6c2254ce20cbceba3174699ce51b340
+Deleted: sha256:bcb69c9ac721a434b52c0baee0e71ff964b9e38150f43499f27e21c17bab15fa
+Deleted: sha256:af3afc839dde16b0b90b7945465a2fd7281bf8ae5595f4d0a015f253b7b0505e
+Deleted: sha256:06fea9f5d16492832387d9c1fda52726a5c5aaadeaeded57dad4824bef436c59
+Deleted: sha256:66abde7634b80bf6c87f419c1285ccbeeb4e0b821727e4a2e6997472b727edb9
+Deleted: sha256:7d2a7b1935a53379a8128a300a27bce3b3bbc64c049d07a2dad9b9180fbe986a
+Deleted: sha256:3b9aafa536424c5636a9cfba563737c2170a543f46d9945fa23e58799380e430
+Deleted: sha256:4e0ef39338ea6428ee13b834aa7ae5099581d11408b66fea89318b07ccb58a4d
+Deleted: sha256:680eea270c95c82262144c40ff7006cc92c0b760196a85e2b0504c2b8d15940c
+Deleted: sha256:a2a53bddd6fbfc90dccc9aedf48ef1acc403fbd1bfb4cc9371a7ae27f2e3f598
+Deleted: sha256:94c91eb073aa8acbbf27ab2b0b9240a43024c3cdf77c29918900aa0d7f486944
+Deleted: sha256:d916f677b8ff479a7992f48d2f9968d324770e6e8464d24bd47d8fa640fb569c
+[1;38m====================================== [0m
+[1;34m     Building Docker Image..  [0m
+[1;38m====================================== [0m
+Sending build context to Docker daemon  4.096kB
+Step 1/15 : FROM centos:7
+ ---> 8652b9f0cb4c
+Step 2/15 : ENV container docker
+ ---> Running in 85c7f9a1b4b0
+Removing intermediate container 85c7f9a1b4b0
+ ---> d4269cb3a994
+Step 3/15 : RUN yum install -y python3
+ ---> Running in cff3e63e9880
+Loaded plugins: fastestmirror, ovl
+Determining fastest mirrors
+ * base: mirror.sjc02.svwh.net
+ * extras: mirror.grid.uchicago.edu
+ * updates: mirrors.xtom.com
+Resolving Dependencies
+--> Running transaction check
+---> Package python3.x86_64 0:3.6.8-18.el7 will be installed
+--> Processing Dependency: python3-libs(x86-64) = 3.6.8-18.el7 for package: python3-3.6.8-18.el7.x86_64
+--> Processing Dependency: python3-setuptools for package: python3-3.6.8-18.el7.x86_64
+--> Processing Dependency: python3-pip for package: python3-3.6.8-18.el7.x86_64
+--> Processing Dependency: libpython3.6m.so.1.0()(64bit) for package: python3-3.6.8-18.el7.x86_64
+--> Running transaction check
+---> Package python3-libs.x86_64 0:3.6.8-18.el7 will be installed
+--> Processing Dependency: libtirpc.so.1()(64bit) for package: python3-libs-3.6.8-18.el7.x86_64
+---> Package python3-pip.noarch 0:9.0.3-8.el7 will be installed
+---> Package python3-setuptools.noarch 0:39.2.0-10.el7 will be installed
+--> Running transaction check
+---> Package libtirpc.x86_64 0:0.2.4-0.16.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                  Arch         Version              Repository     Size
+================================================================================
+Installing:
+ python3                  x86_64       3.6.8-18.el7         updates        70 k
+Installing for dependencies:
+ libtirpc                 x86_64       0.2.4-0.16.el7       base           89 k
+ python3-libs             x86_64       3.6.8-18.el7         updates       6.9 M
+ python3-pip              noarch       9.0.3-8.el7          base          1.6 M
+ python3-setuptools       noarch       39.2.0-10.el7        base          629 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+4 Dependent packages)
+
+Total download size: 9.3 M
+Installed size: 48 M
+Downloading packages:
+[91mwarning: /var/cache/yum/x86_64/7/updates/packages/python3-3.6.8-18.el7.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY
+[0mPublic key for python3-3.6.8-18.el7.x86_64.rpm is not installed
+Public key for python3-pip-9.0.3-8.el7.noarch.rpm is not installed
+--------------------------------------------------------------------------------
+Total                                               12 MB/s | 9.3 MB  00:00     
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+[91mImporting GPG key 0xF4A80EB5:
+ Userid     : "CentOS-7 Key (CentOS 7 Official Signing Key) <security@centos.org>"
+ Fingerprint: 6341 ab27 53d7 8a78 a7c2 7bb1 24c6 a8a7 f4a8 0eb5
+ Package    : centos-release-7-9.2009.0.el7.centos.x86_64 (@CentOS)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+[0mRunning transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : libtirpc-0.2.4-0.16.el7.x86_64                               1/5 
+  Installing : python3-setuptools-39.2.0-10.el7.noarch                      2/5 
+  Installing : python3-pip-9.0.3-8.el7.noarch                               3/5 
+  Installing : python3-3.6.8-18.el7.x86_64                                  4/5 
+  Installing : python3-libs-3.6.8-18.el7.x86_64                             5/5 
+  Verifying  : libtirpc-0.2.4-0.16.el7.x86_64                               1/5 
+  Verifying  : python3-setuptools-39.2.0-10.el7.noarch                      2/5 
+  Verifying  : python3-libs-3.6.8-18.el7.x86_64                             3/5 
+  Verifying  : python3-3.6.8-18.el7.x86_64                                  4/5 
+  Verifying  : python3-pip-9.0.3-8.el7.noarch                               5/5 
+
+Installed:
+  python3.x86_64 0:3.6.8-18.el7                                                 
+
+Dependency Installed:
+  libtirpc.x86_64 0:0.2.4-0.16.el7   python3-libs.x86_64 0:3.6.8-18.el7         
+  python3-pip.noarch 0:9.0.3-8.el7   python3-setuptools.noarch 0:39.2.0-10.el7  
+
+Complete!
+Removing intermediate container cff3e63e9880
+ ---> a89f639586e1
+Step 4/15 : RUN mkdir /app
+ ---> Running in e857ae14a738
+Removing intermediate container e857ae14a738
+ ---> 3cb3642576c3
+Step 5/15 : WORKDIR /app
+ ---> Running in 2799180c5a4d
+Removing intermediate container 2799180c5a4d
+ ---> 3303aaff760a
+Step 6/15 : COPY ./requirements.txt requirements.txt
+ ---> 3162b2807702
+Step 7/15 : RUN pip3 install -r requirements.txt
+ ---> Running in c76da34c83ac
+[91mWARNING: Running pip install with root privileges is generally not a good idea. Try `pip3 install --user` instead.
+[0mCollecting Flask==1.0.2 (from -r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/7f/e7/08578774ed4536d3242b14dacb4696386634607af824ea997202cd0edb4b/Flask-1.0.2-py2.py3-none-any.whl (91kB)
+Collecting Flask-RESTful==0.3.8 (from -r requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/e9/83/d0d33c971de2d38e54b0037136c8b8d20b9c83d308bc6c220a25162755fd/Flask_RESTful-0.3.8-py2.py3-none-any.whl
+Collecting Jinja2>=2.10 (from Flask==1.0.2->-r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/7e/c2/1eece8c95ddbc9b1aeb64f5783a9e07a286de42191b7204d67b7496ddf35/Jinja2-2.11.3-py2.py3-none-any.whl (125kB)
+Collecting Werkzeug>=0.14 (from Flask==1.0.2->-r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/cc/94/5f7079a0e00bd6863ef8f1da638721e9da21e5bacee597595b318f71d62e/Werkzeug-1.0.1-py2.py3-none-any.whl (298kB)
+Collecting itsdangerous>=0.24 (from Flask==1.0.2->-r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl
+Collecting click>=5.1 (from Flask==1.0.2->-r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/d2/3d/fa76db83bf75c4f8d338c2fd15c8d33fdd7ad23a9b5e57eb6c5de26b430e/click-7.1.2-py2.py3-none-any.whl (82kB)
+Collecting six>=1.3.0 (from Flask-RESTful==0.3.8->-r requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/ee/ff/48bde5c0f013094d729fe4b0316ba2a24774b3ff1c52d924a8a4cb04078a/six-1.15.0-py2.py3-none-any.whl
+Collecting pytz (from Flask-RESTful==0.3.8->-r requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/70/94/784178ca5dd892a98f113cdd923372024dc04b8d40abe77ca76b5fb90ca6/pytz-2021.1-py2.py3-none-any.whl (510kB)
+Collecting aniso8601>=0.82 (from Flask-RESTful==0.3.8->-r requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/2c/09/c26ecac7a5e187db69380e66cbad27f8d53ae98b3d5188af08fdd5e34d9f/aniso8601-8.1.1-py2.py3-none-any.whl (44kB)
+Collecting MarkupSafe>=0.23 (from Jinja2>=2.10->Flask==1.0.2->-r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/b2/5f/23e0023be6bb885d00ffbefad2942bc51a620328ee910f64abe5a8d18dd1/MarkupSafe-1.1.1-cp36-cp36m-manylinux1_x86_64.whl
+Installing collected packages: MarkupSafe, Jinja2, Werkzeug, itsdangerous, click, Flask, six, pytz, aniso8601, Flask-RESTful
+Successfully installed Flask-1.0.2 Flask-RESTful-0.3.8 Jinja2-2.11.3 MarkupSafe-1.1.1 Werkzeug-1.0.1 aniso8601-8.1.1 click-7.1.2 itsdangerous-1.1.0 pytz-2021.1 six-1.15.0
+Removing intermediate container c76da34c83ac
+ ---> 4b6f89df7d73
+Step 8/15 : RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == systemd-tmpfiles-setup.service ] || rm -f $i; done); rm -f /lib/systemd/system/multi-user.target.wants/*;rm -f /etc/systemd/system/*.wants/*;rm -f /lib/systemd/system/local-fs.target.wants/*; rm -f /lib/systemd/system/sockets.target.wants/*udev*; rm -f /lib/systemd/system/sockets.target.wants/*initctl*; rm -f /lib/systemd/system/basic.target.wants/*;rm -f /lib/systemd/system/anaconda.target.wants/*;
+ ---> Running in 0199db8c59cd
+Removing intermediate container 0199db8c59cd
+ ---> 4a1fb6194767
+Step 9/15 : VOLUME [ "/sys/fs/cgroup" ]
+ ---> Running in 0236bfa03304
+Removing intermediate container 0236bfa03304
+ ---> 6dab647dc0d0
+Step 10/15 : RUN yum clean all &&     yum -y install openssh-server openssh-clients initscripts &&     rm -rf /var/cache/yum
+ ---> Running in ad445c1c3b3a
+Loaded plugins: fastestmirror, ovl
+Cleaning repos: base extras updates
+Cleaning up list of fastest mirrors
+Loaded plugins: fastestmirror, ovl
+Determining fastest mirrors
+ * base: mirrors.ocf.berkeley.edu
+ * extras: mirrors.lug.mtu.edu
+ * updates: mirrors.xtom.com
+Resolving Dependencies
+--> Running transaction check
+---> Package initscripts.x86_64 0:9.49.53-1.el7_9.1 will be installed
+--> Processing Dependency: sysvinit-tools >= 2.87-5 for package: initscripts-9.49.53-1.el7_9.1.x86_64
+--> Processing Dependency: iproute for package: initscripts-9.49.53-1.el7_9.1.x86_64
+---> Package openssh-clients.x86_64 0:7.4p1-21.el7 will be installed
+--> Processing Dependency: openssh = 7.4p1-21.el7 for package: openssh-clients-7.4p1-21.el7.x86_64
+--> Processing Dependency: fipscheck-lib(x86-64) >= 1.3.0 for package: openssh-clients-7.4p1-21.el7.x86_64
+--> Processing Dependency: libfipscheck.so.1()(64bit) for package: openssh-clients-7.4p1-21.el7.x86_64
+--> Processing Dependency: libedit.so.0()(64bit) for package: openssh-clients-7.4p1-21.el7.x86_64
+---> Package openssh-server.x86_64 0:7.4p1-21.el7 will be installed
+--> Processing Dependency: libwrap.so.0()(64bit) for package: openssh-server-7.4p1-21.el7.x86_64
+--> Running transaction check
+---> Package fipscheck-lib.x86_64 0:1.4.1-6.el7 will be installed
+--> Processing Dependency: /usr/bin/fipscheck for package: fipscheck-lib-1.4.1-6.el7.x86_64
+---> Package iproute.x86_64 0:4.11.0-30.el7 will be installed
+--> Processing Dependency: libmnl.so.0(LIBMNL_1.0)(64bit) for package: iproute-4.11.0-30.el7.x86_64
+--> Processing Dependency: libxtables.so.10()(64bit) for package: iproute-4.11.0-30.el7.x86_64
+--> Processing Dependency: libmnl.so.0()(64bit) for package: iproute-4.11.0-30.el7.x86_64
+---> Package libedit.x86_64 0:3.0-12.20121213cvs.el7 will be installed
+---> Package openssh.x86_64 0:7.4p1-21.el7 will be installed
+---> Package sysvinit-tools.x86_64 0:2.88-14.dsf.el7 will be installed
+---> Package tcp_wrappers-libs.x86_64 0:7.6-77.el7 will be installed
+--> Running transaction check
+---> Package fipscheck.x86_64 0:1.4.1-6.el7 will be installed
+---> Package iptables.x86_64 0:1.4.21-35.el7 will be installed
+--> Processing Dependency: libnfnetlink.so.0()(64bit) for package: iptables-1.4.21-35.el7.x86_64
+--> Processing Dependency: libnetfilter_conntrack.so.3()(64bit) for package: iptables-1.4.21-35.el7.x86_64
+---> Package libmnl.x86_64 0:1.0.3-7.el7 will be installed
+--> Running transaction check
+---> Package libnetfilter_conntrack.x86_64 0:1.0.6-1.el7_3 will be installed
+---> Package libnfnetlink.x86_64 0:1.0.1-4.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                   Arch      Version                   Repository  Size
+================================================================================
+Installing:
+ initscripts               x86_64    9.49.53-1.el7_9.1         updates    440 k
+ openssh-clients           x86_64    7.4p1-21.el7              base       655 k
+ openssh-server            x86_64    7.4p1-21.el7              base       459 k
+Installing for dependencies:
+ fipscheck                 x86_64    1.4.1-6.el7               base        21 k
+ fipscheck-lib             x86_64    1.4.1-6.el7               base        11 k
+ iproute                   x86_64    4.11.0-30.el7             base       805 k
+ iptables                  x86_64    1.4.21-35.el7             base       432 k
+ libedit                   x86_64    3.0-12.20121213cvs.el7    base        92 k
+ libmnl                    x86_64    1.0.3-7.el7               base        23 k
+ libnetfilter_conntrack    x86_64    1.0.6-1.el7_3             base        55 k
+ libnfnetlink              x86_64    1.0.1-4.el7               base        26 k
+ openssh                   x86_64    7.4p1-21.el7              base       510 k
+ sysvinit-tools            x86_64    2.88-14.dsf.el7           base        63 k
+ tcp_wrappers-libs         x86_64    7.6-77.el7                base        66 k
+
+Transaction Summary
+================================================================================
+Install  3 Packages (+11 Dependent packages)
+
+Total download size: 3.6 M
+Installed size: 11 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              2.2 MB/s | 3.6 MB  00:01     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : fipscheck-1.4.1-6.el7.x86_64                                1/14 
+  Installing : fipscheck-lib-1.4.1-6.el7.x86_64                            2/14 
+  Installing : openssh-7.4p1-21.el7.x86_64                                 3/14 
+  Installing : libmnl-1.0.3-7.el7.x86_64                                   4/14 
+  Installing : libnfnetlink-1.0.1-4.el7.x86_64                             5/14 
+  Installing : libnetfilter_conntrack-1.0.6-1.el7_3.x86_64                 6/14 
+  Installing : iptables-1.4.21-35.el7.x86_64                               7/14 
+  Installing : iproute-4.11.0-30.el7.x86_64                                8/14 
+  Installing : sysvinit-tools-2.88-14.dsf.el7.x86_64                       9/14 
+  Installing : tcp_wrappers-libs-7.6-77.el7.x86_64                        10/14 
+  Installing : libedit-3.0-12.20121213cvs.el7.x86_64                      11/14 
+  Installing : openssh-clients-7.4p1-21.el7.x86_64                        12/14 
+  Installing : openssh-server-7.4p1-21.el7.x86_64                         13/14 
+  Installing : initscripts-9.49.53-1.el7_9.1.x86_64                       14/14 
+  Verifying  : fipscheck-lib-1.4.1-6.el7.x86_64                            1/14 
+  Verifying  : libnfnetlink-1.0.1-4.el7.x86_64                             2/14 
+  Verifying  : libmnl-1.0.3-7.el7.x86_64                                   3/14 
+  Verifying  : initscripts-9.49.53-1.el7_9.1.x86_64                        4/14 
+  Verifying  : fipscheck-1.4.1-6.el7.x86_64                                5/14 
+  Verifying  : openssh-clients-7.4p1-21.el7.x86_64                         6/14 
+  Verifying  : libedit-3.0-12.20121213cvs.el7.x86_64                       7/14 
+  Verifying  : iptables-1.4.21-35.el7.x86_64                               8/14 
+  Verifying  : tcp_wrappers-libs-7.6-77.el7.x86_64                         9/14 
+  Verifying  : libnetfilter_conntrack-1.0.6-1.el7_3.x86_64                10/14 
+  Verifying  : iproute-4.11.0-30.el7.x86_64                               11/14 
+  Verifying  : sysvinit-tools-2.88-14.dsf.el7.x86_64                      12/14 
+  Verifying  : openssh-7.4p1-21.el7.x86_64                                13/14 
+  Verifying  : openssh-server-7.4p1-21.el7.x86_64                         14/14 
+
+Installed:
+  initscripts.x86_64 0:9.49.53-1.el7_9.1  openssh-clients.x86_64 0:7.4p1-21.el7 
+  openssh-server.x86_64 0:7.4p1-21.el7   
+
+Dependency Installed:
+  fipscheck.x86_64 0:1.4.1-6.el7                                                
+  fipscheck-lib.x86_64 0:1.4.1-6.el7                                            
+  iproute.x86_64 0:4.11.0-30.el7                                                
+  iptables.x86_64 0:1.4.21-35.el7                                               
+  libedit.x86_64 0:3.0-12.20121213cvs.el7                                       
+  libmnl.x86_64 0:1.0.3-7.el7                                                   
+  libnetfilter_conntrack.x86_64 0:1.0.6-1.el7_3                                 
+  libnfnetlink.x86_64 0:1.0.1-4.el7                                             
+  openssh.x86_64 0:7.4p1-21.el7                                                 
+  sysvinit-tools.x86_64 0:2.88-14.dsf.el7                                       
+  tcp_wrappers-libs.x86_64 0:7.6-77.el7                                         
+
+Complete!
+Removing intermediate container ad445c1c3b3a
+ ---> 9ec3460b1c2a
+Step 11/15 : RUN ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa
+ ---> Running in 0c26e8f2a26b
+Generating public/private rsa key pair.
+Your identification has been saved in /etc/ssh/ssh_host_rsa_key.
+Your public key has been saved in /etc/ssh/ssh_host_rsa_key.pub.
+The key fingerprint is:
+SHA256:w2wkhtZsj6gUQohwTUeJj7o02TZGFG8poTAe9yWL91k root@0c26e8f2a26b
+The key's randomart image is:
++---[RSA 2048]----+
+|Bo.++=oo         |
+|=+o.*B=.         |
+|..oo+*X .E       |
+| . o+*oBo        |
+|  .=. .oS        |
+| .=.=  . .       |
+| ..= .           |
+|  .              |
+|                 |
++----[SHA256]-----+
+Removing intermediate container 0c26e8f2a26b
+ ---> eb914772d77a
+Step 12/15 : RUN ssh-keygen -f /etc/ssh/ssh_host_ed25519_key -N '' -t ed25519
+ ---> Running in 29be57b1a06d
+Generating public/private ed25519 key pair.
+Your identification has been saved in /etc/ssh/ssh_host_ed25519_key.
+Your public key has been saved in /etc/ssh/ssh_host_ed25519_key.pub.
+The key fingerprint is:
+SHA256:E0eMNK9lAWHfirgJz03MK3sT600tFAbyp9J8q3E/Eo8 root@29be57b1a06d
+The key's randomart image is:
++--[ED25519 256]--+
+|      ..B=o      |
+|       +.*.o     |
+|        o X .    |
+|       * @ o     |
+|    . o S +      |
+|     + *.=.o     |
+|      * +o=+.    |
+|       o+*Eoo    |
+|      .oo.....   |
++----[SHA256]-----+
+Removing intermediate container 29be57b1a06d
+ ---> 0e5b722b3c39
+Step 13/15 : EXPOSE 22
+ ---> Running in d5b5f461dc9c
+Removing intermediate container d5b5f461dc9c
+ ---> 78a4200f8a9e
+Step 14/15 : RUN echo root:pass | chpasswd
+ ---> Running in fa03fb61e2cf
+Removing intermediate container fa03fb61e2cf
+ ---> 3a552542dd25
+Step 15/15 : CMD ["/usr/sbin/init"]
+ ---> Running in 7c6203764461
+Removing intermediate container 7c6203764461
+ ---> 9b76fddd400b
+Successfully built 9b76fddd400b
+Successfully tagged c7-systemd-sshd:latest
+
+our docker image is...
+REPOSITORY        TAG       IMAGE ID       CREATED                  SIZE
+c7-systemd-sshd   latest    9b76fddd400b   Less than a second ago   394MB
+[1;33m Successfully build docker image.. [0m
+[1;38m====================================== [0m
+[1;34m     Creating the container... [0m
+[1;38m====================================== [0m
+305a6afb2d364f6da2c742ad3955d328c5c0fa504626e48e4c1f57374e7f3d74
+replayd_container ..
+CONTAINER ID   IMAGE             COMMAND            CREATED                  STATUS                  PORTS                                           NAMES
+305a6afb2d36   c7-systemd-sshd   "/usr/sbin/init"   Less than a second ago   Up Less than a second   0.0.0.0:6080->6080/tcp, 0.0.0.0:22222->22/tcp   replayd_server
+[1;33mreplayd_server is running with ip : 172.17.0.2 [0m
+configuring our server ...
+PLAY [Install ReplayD on CentOS machine] ***************************************
+
+TASK [Ensure group "replayd" exists] *******************************************
+
+TASK [Ensure group "replayd" exists] *******************************************
+changed: [172.17.0.2]
+
+TASK [Create replayd user] *****************************************************
+
+TASK [Create replayd user] *****************************************************
+changed: [172.17.0.2]
+
+TASK [Copy file with owner and permissions] ************************************
+
+TASK [Copy file with owner and permissions] ************************************
+changed: [172.17.0.2]
+
+TASK [Copy replayd service file] ***********************************************
+
+TASK [Copy replayd service file] ***********************************************
+changed: [172.17.0.2]
+
+TASK [Start replayd service] ***************************************************
+
+TASK [Start replayd service] ***************************************************
+changed: [172.17.0.2]
+
+PLAY RECAP *********************************************************************
+172.17.0.2                 : ok=5    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[1;33m Successfully configured replayd_server [0m
+ unit test... [0m
+[1;38m=============================================================== [0m
+[1;34m    Testing Post request... [0m
+[1;38m=============================================================== [0m
+setting these...
+{
+    "next_movie": "BlackWidow",
+    "walmart": "$$$$$$$$$$..."
+}
+Post response...
+"Successfully accepted"
+[1;33m--- Testing Post Succeeded [0m
+[1;38m=============================================================== [0m
+[1;34m    Testing Get request to make sure post really worked... [0m
+[1;38m=============================================================== [0m
+Get response...
+[1;33m--- Get successfully worked! [0m
+[1;38m=============================================================== [0m
+[1;34m    Testing Put request... [0m
+[1;38m=============================================================== [0m
+setting these...
+{
+    "next_movie": "F9",
+    "walmart": "forever"
+}
+Put response...
+"Successfully updated"
+[1;33m--- Testing Put Succeeded [0m
+[1;38m=============================================================== [0m
+[1;34m    Testing Get request to make sure put really worked... [0m
+[1;38m=============================================================== [0m
+Get response...
+[1;33m--- Get successfully worked! [0m

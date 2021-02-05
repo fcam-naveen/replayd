@@ -44,7 +44,7 @@ class ReplayD(Resource):
         with open(REPLAYD_FILE, 'w') as f:
             json.dump(user_data, f)
 
-        return "Succesfully accepted",201
+        return "Successfully accepted",201
 
     @perform_operation
     def put(self):

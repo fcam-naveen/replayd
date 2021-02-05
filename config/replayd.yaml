@@ -1,14 +1,12 @@
 ---
 - name: Install ReplayD on CentOS machine
-  hosts: REPLAYD_SERVER
+  hosts: "{{REPLAYD_SERVER | default('REPLAYD_SERVER')}} "
   gather_facts: no
 
   vars:
     daemon_service_path: /usr/local/bin
 
   tasks:
-    - debug: var=REPLAYD_SERVER
-
     - name: Ensure group "replayd" exists
       ansible.builtin.group:
         name: replayd

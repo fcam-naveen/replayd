@@ -1,42 +1,50 @@
 #!/bin/bash
 
+ORANGE="\e[1;38m"
+RED="\e[1;31m"
+YELLOW="\e[1;33m"
+BLUE="\e[1;34m"
+END="\e[0m"
 REPLAYD_SERVER="replayd_server"
+
 function build_replayd {
+    echo -e "$ORANGE Cleaning up if required... $END"
     # stop if we already have server running
     docker stop $REPLAYD_SERVER
     docker rmi c7-systemd-sshd
 
-    echo "======================================"
-    echo "Building Docker Image.."
-    echo "======================================"
+    echo -e "$ORANGE====================================== $END"
+    echo -e "$BLUE     Building Docker Image..  $END"
+    echo -e "$ORANGE====================================== $END"
     cd build
     docker build --rm -t c7-systemd-sshd .
     printf "\nour docker image is...\n"
     docker images c7-systemd-sshd
     cd ..
+    echo -e "$YELLOW Successfully build docker image.. $END"
 }
 
 function run_config_replayd {
-    echo "======================================"
-    printf "Creating the container...\m"
-    echo "======================================"
+    echo -e "$ORANGE====================================== $END"
+    echo -e "$BLUE     Creating the container... $END"
+    echo -e "$ORANGE====================================== $END"
     docker run -d --name $REPLAYD_SERVER --rm --privileged=true -p 22222:22 -p 6080:6080 -v /sys/fs/cgroup:/sys/fs/cgroup:ro c7-systemd-sshd
     printf "replayd_container ..\n"
     docker ps -f "name=$REPLAYD_SERVER"
-    rep_ip=`docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $REPLAYD_SERVER`
-    printf "$REPLAYD_SERVER is running with ip : $rep_ip\n"
+    server_ip=`docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $REPLAYD_SERVER`
+    echo -e "$YELLOW$REPLAYD_SERVER is running with ip : $server_ip $END"
 
     printf "configuring our server ..."
     cd config
-    ansible-playbook replayd.yaml --extra-vars "REPLAYD_SERVER=$rep_ip"
+    # Not able to use command line args for hosts , giving error. temporary solution
+    awk 'f{$0="'$server_ip'";f=0}/REPLAYD_SERVER/{f=1}1' temp_hosts > hosts
+    ansible-playbook replayd.yaml 
     cd ..
-
+    echo -e "$YELLOW Successfully configured $REPLAYD_SERVER $END"
 }
 
 function test_replayd {
-    echo "======================================"
-    echo "performing unit test..."
-    echo "======================================"
+    echo -e "$BLUEPerforming unit test... $END"
     cd test
     ./unit_test.sh
     cd ..
