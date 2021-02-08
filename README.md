@@ -26,7 +26,7 @@ You can run using\
 ```./run_all.sh all``` <br />   
 Example output is at ```run_all_example_output.txt```
 
-## Test with your json using curl_replayd.sh
+## Test POST and PUT with your json using curl_replayd.sh
 ```test``` dir has a script to test with your own json.  
 ```./curl_replayd.sh``` will show  
 ```
