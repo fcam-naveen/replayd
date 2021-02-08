@@ -18,7 +18,7 @@ You can install using ```pip3 install ansible```.
 ### Build Run and Test
 ```run_all.sh``` will perform following operations. Please run this on the machine where application hosting docker container will be created. 
 1. Build c7-systemd-sshd docker image with sshd,python3 flask-restful packages. 
-2. Docker container will run with name ```replayd_server```.
+2. Docker container will be created with name ```replayd_server```.
 3. Then ansible playbook will run to configure replayd daemon on this docker container.
 4. POST followed by GET will run against replayd server for verification.
 5. PUT followed by GET will run against replayd server for verification.\
