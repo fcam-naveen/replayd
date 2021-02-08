@@ -1,4 +1,4 @@
-# Deploying Simple ReplayD Application
+# Simple ReplayD Application
 This guide will go through how to deploy a simple ReplayD server. ReplayD server will return what you send it. 
 This supports POST, PUT and GET request.
 Its implemented with Python3 Flask-Restful server on Docker Container created on the same linux system you are running build script(run_all.sh explained bellow).
