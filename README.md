@@ -28,11 +28,18 @@ Example output is at ```run_all_example_output.txt```
 
 ## Test with your json using curl_replayd.sh
 ```test``` dir has a script to test with your own json.  
+```./curl_replayd.sh``` will show  
+```
+Usage: 
+    ./curl_replayd SERVER_IP <POST|PUT|GET> PAYLOAD
+    PAYLOAD is not applicable for GET
+```
+
 1. Testing with POST and GET.  
 Please create a json file for POST. Example can be seen with post.json.  
-```./curl_replayd.sh localhost POST <post_json_file>```.  
+```./curl_replayd.sh <your_host_ip> POST <post_json_file>```  
 Now you can perform GET to see what you have sent.  
-```./curl_replayd.sh localhost GET``` <br />  
+```./curl_replayd.sh <your_host_ip> GET``` <br />  
 
 2. You can test PUT similar to #1 with PUT option.
 
