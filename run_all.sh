@@ -52,7 +52,7 @@ function test_replayd {
 
 function show_help {
     echo "run_all.sh <all | build | run | test>"
-    echo "build will do all steps, build,run,test"
+    echo "all will do all steps, build,run,test"
     echo "build will build docker image"
     echo "run will create a docker container and configures replayd server on port 6080"
     echo "test will perform post and get to make sure what we get is what we set"
