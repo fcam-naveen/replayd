@@ -43,7 +43,7 @@ You can see the help using
 ```all``` will do all steps. build,run,test.  
 ```build``` will rebuild docker image.  
 ```run``` will recreate a docker container and configures replayd server on port 6080.  
-```test``` will perform post and get to make sure what we get is what we set.  
+```test``` will perform POST and then GET to make sure what we get is what we set.  
 
 ### Debugging
 1. If run_all.sh fails with
