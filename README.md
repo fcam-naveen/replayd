@@ -1,4 +1,4 @@
-# Deploying Simple ReplayD Server
+# Deploying Simple ReplayD Application
 This guide will go through how to deploy a simple ReplayD server. ReplayD server will return what you send it. 
 This supports POST, PUT and GET request.
 Its implemented with Python3 Flask-Restful server on Docker Container created on the same linux system you are running build script(run_all.sh explained bellow).
@@ -16,7 +16,7 @@ You can install using ```pip3 install ansible```.
 ```cd replayd```
 
 ### Build Run and Test
-```run_all.sh``` will perform following operations.
+```run_all.sh``` will perform following operations. Please run this on the machine where application hosting docker container will be created. 
 1. Build c7-systemd-sshd docker image with sshd,python3 flask-restful packages. 
 2. Docker container will run with name ```replayd_server```.
 3. Then ansible playbook will run to configure replayd daemon on this docker container.
