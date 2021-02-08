@@ -22,8 +22,8 @@ You can install using ```pip3 install ansible```.
 3. Then ansible playbook will run to configure replayd daemon on this docker container.
 4. POST followed by GET will run against replayd server for verification.
 5. PUT followed by GET will run against replayd server for verification.
-You can run using
-```./run_all.sh all```. \
+You can run using \
+```./run_all.sh all```. 
 Example output is at ```run_all_example_output.txt```
 
 ## Test with your json using curl_replayd.sh
