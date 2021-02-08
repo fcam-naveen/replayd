@@ -12,12 +12,12 @@ You can install using ```pip3 install ansible```.
 
 ## Build Deploy and Test
 ### Clone the repository
-```git clone git@github.com:fcam-naveen/replayd.git ``` 
+```git clone git@github.com:fcam-naveen/replayd.git ```.   
 ```cd replayd```
 
 ### Build Run and Test
 ```run_all.sh``` will perform following operations.
-1. Build centos7 docker image with sshd,python3 flask-restful packages. 
+1. Build c7-systemd-sshd docker image with sshd,python3 flask-restful packages. 
 2. Docker container will run with name ```replayd_server```.
 3. Then ansible playbook will run to configure replayd daemon on this docker container.
 4. POST followed by GET will run against replayd server for verification.
