@@ -12,7 +12,7 @@ You can install using ```pip3 install ansible```.
 
 ## Build Deploy and Test
 ### Clone the repository
-```git clone git@github.com:fcam-naveen/replayd.git ``` <br />
+```git clone git@github.com:fcam-naveen/replayd.git ``` 
 ```cd replayd```
 
 ### Build Run and Test
