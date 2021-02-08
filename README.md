@@ -27,7 +27,7 @@ You can run using\
 Example output is at ```run_all_example_output.txt```
 
 ## Test with your json using curl_replayd.sh
-```test``` dir has a script to test your with your own json.  
+```test``` dir has a script to test with your own json.  
 1. Testing with POST and GET.  
 Please create a json file for POST. Example can be seen with post.json.  
 ```./curl_replayd.sh localhost POST <post_json_file>```.  
