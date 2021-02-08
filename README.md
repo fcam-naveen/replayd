@@ -31,19 +31,19 @@ Example output is at ```run_all_example_output.txt```
 1. Testing with POST and GET
 Please create a json file for POST. Example can be seen with post.json
 ```./curl_replayd.sh localhost POST <post_json_file>```
-Now you can perform GET to see what you have sent
+Now you can perform GET to see what you have sent\
 ```./curl_replayd.sh localhost GET```
 
 2. You can test PUT similar to #1 with PUT option.
 
 ## run_all.sh
 You can see the help using
-./run_all.sh 
-```run_all.sh <all | build | run | test> ```
-```all``` will do all steps. build,run,test.
+./run_all.sh \
+```run_all.sh <all | build | run | test> ```\
+```all``` will do all steps. build,run,test.\
 ```build``` will build docker image.
-```run``` will create a docker container and configures replayd server on port 6080.
-```test`` will perform post and get to make sure what we get is what we set.
+```run``` will create a docker container and configures replayd server on port 6080.\
+```test`` will perform post and get to make sure what we get is what we set.\
 
 ### Debugging
 1. If run_all.sh fails with
