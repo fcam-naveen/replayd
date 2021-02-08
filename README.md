@@ -12,7 +12,7 @@ You can install using ```pip3 install ansible```.
 
 ## Build Deploy and Test
 ### Clone the repository
-```git clone git@github.com:fcam-naveen/replayd.git ``` \
+```git clone git@github.com:fcam-naveen/replayd.git ``` <br />
 ```cd replayd```
 
 ### Build Run and Test
@@ -32,7 +32,7 @@ Example output is at ```run_all_example_output.txt```
 Please create a json file for POST. Example can be seen with post.json.  
 ```./curl_replayd.sh localhost POST <post_json_file>```.  
 Now you can perform GET to see what you have sent.  
-```./curl_replayd.sh localhost GET```.  
+```./curl_replayd.sh localhost GET``` <br />  
 
 2. You can test PUT similar to #1 with PUT option.
 
