@@ -44,7 +44,7 @@ Now you can perform GET to see what you have sent.
 2. You can test PUT similar to #1 with PUT option.
 
 ## run_all.sh
-You can see the help using
+You can see the help using  
 ./run_all.sh  
 ```run_all.sh <all | build | run | test> ```.  
 ```all``` will do all steps. build,run,test.  
